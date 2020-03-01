@@ -22,8 +22,17 @@ import com.rkb.models.LocationStat;
 @Service
 public class CoronaVirusDataService {
 	
+	
+
 	private static String Virus_Data_Url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
 	private List<LocationStat> allStats = new ArrayList<>();
+	public List<LocationStat> getAllStats() {
+		return allStats;
+	}
+
+	public void setAllStats(List<LocationStat> allStats) {
+		this.allStats = allStats;
+	}
 	
 	@PostConstruct
 	@Scheduled(cron = "* 1 * * * *")
